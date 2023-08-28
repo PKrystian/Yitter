@@ -56,6 +56,7 @@ class m230827_164941_create_follower_table extends Migration
     public function safeDown()
     {
         $this->dropForeignKey(self::FK_FOLLOWER_USER, self::TABLE_NAME);
+        $this->dropForeignKey(self::FK_FOLLOWER_USER_FOLLOWER, self::TABLE_NAME);
         $this->dropTable(self::TABLE_NAME);
 
         return true;
